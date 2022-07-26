@@ -3,7 +3,6 @@ import React from "react";
 import { Button, Stack } from "@mui/material";
 
 const ExerciseCard = ({ exercise }) => {
-  console.log(exercise);
   return (
     <Link className="exercise-card" to={`/Home`}>
       <video
