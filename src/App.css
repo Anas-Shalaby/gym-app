@@ -1,38 +1,261 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Josefin Sans";
+  background-color: #000;
+  color: #fff;
+}
+.slider {
+  /* width: 100px; */
+  height: 600px;
+}
+.slider div img {
+  width: 600px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ::-webkit-scrollbar {
+  width: 0px;
+} */
+.paginate {
+  background-color: #000;
+  border-radius: 12px;
+  margin-top: 39px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.paginate li button {
+  color: #fff;
+}
+.right-arrow,
+.left-arrow {
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff2625;
+  font-size: 25px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -20px;
+  right: 80px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+.spikes {
+  position: relative;
+  background: #0d0e10;
+  height: 3vh;
+}
+
+.spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 50px;
+  background-size: 50px 100%;
+  background-image: linear-gradient(135deg, #0d0e10 25%, transparent 25%),
+    linear-gradient(225deg, #0d0e10 25%, transparent 25%);
+  background-position: 0 0;
+}
+
+.right-arrow {
+  right: 140px;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.react-horizontal-scrolling-menu--wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo {
+  width: 220px;
+  height: 220px;
+}
+.btn {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.1, 1.1);
+}
+.detail-image {
+  width: 729px;
+  height: 742px;
+}
+
+.hero-banner-img {
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  width: 550px;
+  height: 700px;
+  margin-top: -330px;
+}
+
+.exercise-card {
+  width: 300px;
+  height: 345px;
+  background: #000;
+  border-top: 4px solid #ff2625;
+  border-bottom-left-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+  /* margin-left: 40px; */
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.transfrom-card {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.exercise-card video {
+  width: 400px;
+  height: 345px;
+}
+
+.bodyPart-card {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.exercise-card:hover,
+.bodyPart-card:hover,
+.transfrom-card:hover {
+  transform: scale(1.1, 1.1);
+}
+.transfrom-card:hover {
+  background-color: #ff2625;
+}
+
+.search-btn:hover {
+  color: #ff2625 !important;
+  border: 1px solid #ff2625 !important;
+}
+
+.exercise-video {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 24px;
+  width: 387px;
+  height: 381px;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1200px) {
+  .detail-image {
+    width: 300px;
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  .inputForm {
+    width: 20%;
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 500px;
+  }
+  .transfrom-card {
+    width: 300px;
+  }
+  .transfrom-card img {
+    width: 300px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    position: static !important;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-banner-img {
+    width: 400px;
+    height: 500px;
+    right: 40px;
+    top: 200px;
+  }
+
+  .exercise-card {
+    width: 320px;
+  }
+
+  .exercise-video {
+    width: 320px;
+    height: 300px;
+  }
+}
+.inputForm {
+  width: 30%;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  color: #000;
+}
+
+@media screen and (max-width: 977px) {
+  .hero-banner-img {
+    display: none;
+  }
+  .slider {
+    height: 564px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .exercise-card {
+    width: 280px;
+  }
+  .exercise-card video {
+    width: 280px;
+  }
+  .transfrom-card {
+    padding: 10px;
+  }
+  .transfrom-card img {
+    padding: 10px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .inputForm {
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+  .slider {
+    height: 374px;
   }
 }
