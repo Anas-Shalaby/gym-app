@@ -25,7 +25,7 @@ const App = () => {
     client.fetch(query).then((data) => {
       setUser(data);
     });
-  }, []);
+  }, [userInfo]);
 
   return (
     <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">

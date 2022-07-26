@@ -1,5 +1,5 @@
 import sanityClient from "@sanity/client";
-import ImageUrlBuilder from "@sanity/image-url";
+// import ImageUrlBuilder from "@sanity/image-url";
 export const client = sanityClient({
   projectId: "q1ywcqqy",
   dataset: "production",
@@ -9,6 +9,6 @@ export const client = sanityClient({
   ignoreBrowserTokenWarning: true,
 });
 
-const builder = ImageUrlBuilder(client);
+// const builder = ImageUrlBuilder(client);
 
-const urlFor = (source) => builder.image(source);
+// const urlFor = (source) => builder.image(source);
