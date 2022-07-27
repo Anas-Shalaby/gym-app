@@ -8,6 +8,7 @@ import image6 from "../assets/Offers6.jpeg";
 import image7 from "../assets/Offers7.jpeg";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+
 import "../App.css";
 
 const Offers = (user) => {

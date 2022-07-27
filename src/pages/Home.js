@@ -10,6 +10,7 @@ import Offers from "../components/Offers";
 import "../App.css";
 
 const Home = ({ user, userInfor }) => {
+  console.log(user);
   const [bodyPart, setbodyPart] = useState("all");
   const [exercises, setexercises] = useState([]);
 

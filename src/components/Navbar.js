@@ -6,10 +6,6 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Logo from "../assets/Logo.png";
 import { Typography } from "@mui/material";
 const Navbar = ({ user }) => {
-  // const users = user?.filter((user, index) => {
-  //   return user?._createdAt === "2022-07-26T15:38:54Z";
-  // });
-
   return (
     <Stack
       direction="row"
@@ -52,10 +48,7 @@ const Navbar = ({ user }) => {
             Home
           </Typography>
         </Link>
-        <Link
-          to="#exercises"
-          style={{ textDecoration: "none", color: "#e67700" }}
-        >
+        <Link to={"/Home"} style={{ textDecoration: "none", color: "#e67700" }}>
           <Typography
             sx={{
               fontSize: { lg: "20px", md: "18px", xs: "15px" },
@@ -64,15 +57,15 @@ const Navbar = ({ user }) => {
             Exercises
           </Typography>
         </Link>
-        <Link to="/UploadVideo">
-          {user === "magiza222@gmail.com" ? (
-            <button>
-              <FileUploadIcon />
-            </button>
-          ) : (
-            ""
-          )}
-        </Link>
+
+        {user?.email === "magiza222@gmail.com" ? (
+          <Link to="/UploadVideo">
+            {" "}
+            <FileUploadIcon />{" "}
+          </Link>
+        ) : (
+          ""
+        )}
       </Stack>
     </Stack>
   );

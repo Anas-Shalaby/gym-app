@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 const UploadVideo = ({ user }) => {
+  console.log(user);
   const [caption, setCaption] = useState("");
   const [target, setTopic] = useState(topics[0].name);
   const [loading, setLoading] = useState(false);
@@ -57,7 +58,7 @@ const UploadVideo = ({ user }) => {
             _ref: videoAsset?._id,
           },
         },
-        userId: user[1]._id,
+        userId: "101450264100015137932",
         postedBy: "Mohamed Agiza",
         target,
       };
