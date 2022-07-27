@@ -30,9 +30,9 @@ const App = () => {
   return (
     <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="https://gymagiza.herokuapp.com/" element={<Login />} />
         <Route
-          path="/Home"
+          path="https://gymagiza.herokuapp.com/Home"
           element={
             <Home
               user={jwt_decode(userInfo).email}
@@ -40,9 +40,15 @@ const App = () => {
             />
           }
         />
-        <Route path="/exercises/id:" element={<Exercise />} />
+        <Route
+          path="https://gymagiza.herokuapp.com/exercises/id:"
+          element={<Exercise />}
+        />
 
-        <Route path="/UploadVideo/*" element={<UploadVideo user={user} />} />
+        <Route
+          path="https://gymagiza.herokuapp.com/UploadVideo/*"
+          element={<UploadVideo user={user} />}
+        />
       </Routes>
     </Box>
   );

@@ -192,7 +192,7 @@ const UploadVideo = ({ user }) => {
               >
                 Discard
               </button>
-              <Link to={`/Home`}>
+              <Link to={`https://gymagiza.herokuapp.com/Home`}>
                 <button
                   disabled={videoAsset?.url ? false : true}
                   onClick={handlePost}
