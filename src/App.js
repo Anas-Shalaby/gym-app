@@ -40,10 +40,7 @@ const App = () => {
             />
           }
         />
-        <Route
-          path="https://gymagiza.herokuapp.com/exercises/id:"
-          element={<Exercise />}
-        />
+        <Route path="https://gymagiza.herokuapp.com/" element={<Exercise />} />
 
         <Route
           path="https://gymagiza.herokuapp.com/UploadVideo/*"
