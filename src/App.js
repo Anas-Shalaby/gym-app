@@ -25,14 +25,14 @@ const App = () => {
     client.fetch(query).then((data) => {
       setUser(data);
     });
-  }, [userInfo]);
+  }, []);
 
   return (
     <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
       <Routes>
-        <Route path="https://gymagiza.herokuapp.com/" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route
-          path="https://gymagiza.herokuapp.com/Home"
+          path="/Home"
           element={
             <Home
               user={jwt_decode(userInfo).email}
@@ -40,12 +40,9 @@ const App = () => {
             />
           }
         />
-        <Route path="https://gymagiza.herokuapp.com/" element={<Exercise />} />
+        <Route path="/" element={<Exercise />} />
 
-        <Route
-          path="https://gymagiza.herokuapp.com/UploadVideo/*"
-          element={<UploadVideo user={user} />}
-        />
+        <Route path="/UploadVideo/*" element={<UploadVideo user={user} />} />
       </Routes>
     </Box>
   );

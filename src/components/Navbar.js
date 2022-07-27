@@ -64,7 +64,7 @@ const Navbar = ({ user }) => {
             Exercises
           </Typography>
         </Link>
-        <Link to="https://gymagiza.herokuapp.com/UploadVideo">
+        <Link to="/UploadVideo">
           {user === "magiza222@gmail.com" ? (
             <button>
               <FileUploadIcon />

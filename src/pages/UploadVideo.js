@@ -62,7 +62,7 @@ const UploadVideo = ({ user }) => {
         target,
       };
       client.create(doc).then(() => {
-        navigate("/");
+        navigate("/Home");
       });
     } else {
       setSavingPost(true);
@@ -192,7 +192,7 @@ const UploadVideo = ({ user }) => {
               >
                 Discard
               </button>
-              <Link to={`https://gymagiza.herokuapp.com/Home`}>
+              <Link to={"/Home"}>
                 <button
                   disabled={videoAsset?.url ? false : true}
                   onClick={handlePost}

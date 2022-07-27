@@ -22,7 +22,7 @@ const Footer = () => {
         }}
       >
         <Link
-          to={"https://gymagiza.herokuapp.com/Home"}
+          to={"/Home"}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <img src={Logo} alt="logo" width="100px" height="100px" />

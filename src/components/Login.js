@@ -20,7 +20,7 @@ const Login = () => {
 
     client.createIfNotExists(user).then(() => {
       // navigate("/", { replace: true });
-      window.location.replace("https://gymagiza.herokuapp.com/Home");
+      window.location.replace("/Home");
     });
   };
 

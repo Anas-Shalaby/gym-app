@@ -39,7 +39,7 @@ const Exercise = ({ exercises, setexercises, bodyPart }) => {
     };
 
     fetchExercisesData();
-  }, [bodyPart, setexercises]);
+  }, [bodyPart]);
 
   const indexOfLast = currentPage * exercisesPerPage;
 
