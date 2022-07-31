@@ -5,12 +5,11 @@ import Footer from "../components/Footer";
 import HeroBanner from "../components/HeroBanner";
 import Search from "../components/Search";
 import Exercise from "../components/Exercise";
-import Services from "./Services";
+
 import Offers from "../components/Offers";
 import "../App.css";
 
 const Home = ({ user, userInfor }) => {
-  console.log(user);
   const [bodyPart, setbodyPart] = useState("all");
   const [exercises, setexercises] = useState([]);
 
@@ -19,8 +18,6 @@ const Home = ({ user, userInfor }) => {
       <Navbar user={user} />
       <HeroBanner />
       <section className="spikes"></section>
-      <Services />
-      <Offers user={userInfor} />
       <Search
         setexercises={setexercises}
         bodyPart={bodyPart}

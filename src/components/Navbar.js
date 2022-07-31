@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
-
+import jwtDecode from "jwt-decode";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Logo from "../assets/Logo.png";
 import { Typography } from "@mui/material";
 const Navbar = ({ user }) => {
+  let userdecoded = user;
+  try {
+    userdecoded = jwtDecode(user);
+  } catch (err) {
+    console.log(err);
+  }
   return (
     <Stack
       direction="row"
@@ -48,17 +54,32 @@ const Navbar = ({ user }) => {
             Home
           </Typography>
         </Link>
-        <Link to={"/Home"} style={{ textDecoration: "none", color: "#e67700" }}>
+        <Link
+          to={"/Services"}
+          style={{ textDecoration: "none", color: "#e67700" }}
+        >
           <Typography
             sx={{
               fontSize: { lg: "20px", md: "18px", xs: "15px" },
             }}
           >
-            Exercises
+            Services
+          </Typography>
+        </Link>
+        <Link
+          to={"/About"}
+          style={{ textDecoration: "none", color: "#e67700" }}
+        >
+          <Typography
+            sx={{
+              fontSize: { lg: "20px", md: "18px", xs: "15px" },
+            }}
+          >
+            About
           </Typography>
         </Link>
 
-        {user?.email === "magiza222@gmail.com" ? (
+        {userdecoded?.email === "magiza222@gmail.com" ? (
           <Link to="/UploadVideo">
             {" "}
             <FileUploadIcon />{" "}

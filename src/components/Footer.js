@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box mt="10px" backgroundColor="#0d0e10">
+    <Box mt="10px" sx={{ zIndex: "1000" }}>
       <Stack
         alignItems="center"
         px="40px"
@@ -38,7 +38,6 @@ const Footer = () => {
           <FacebookIcon
             sx={{
               color: "#ff2625",
-              bgcolor: "#000",
             }}
           />
         </a>
@@ -47,10 +46,10 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <InstagramIcon sx={{ color: "#ff2625", bgcolor: "#000" }} />
+          <InstagramIcon sx={{ color: "#ff2625" }} />
         </a>
         <Typography href="" rel="noreferrer" target="_blank">
-          <WhatsAppIcon sx={{ color: "#ff2526" }} /> +201021285657
+          +201021285657
         </Typography>
       </Stack>
     </Box>

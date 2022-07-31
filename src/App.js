@@ -11,6 +11,10 @@ import UploadVideo from "./pages/UploadVideo";
 import { client } from "./util/client";
 
 import Login from "./components/Login";
+import Services from "./pages/Services";
+import Footer from "./components/Footer";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -25,13 +29,17 @@ const App = () => {
       setUser(data);
     });
   }, [userInfo]);
-
-  const userInfoDecoded = jwtDecode(userInfo);
+  let userInfoDecoded = userInfo;
+  try {
+    userInfoDecoded = jwtDecode(userInfo);
+  } catch (err) {
+    console.log(err);
+  }
   return (
     <BrowserRouter>
       <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login user={userInfoDecoded} />} />
           <Route
             path="/Home"
             element={
@@ -44,6 +52,8 @@ const App = () => {
             path="/UploadVideo/*"
             element={<UploadVideo user={userInfoDecoded} />}
           />
+          <Route path="/Services" element={<Services />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </Box>
     </BrowserRouter>

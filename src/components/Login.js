@@ -6,7 +6,11 @@ import jwt_decode from "jwt-decode";
 import { client } from "../util/client";
 
 // import { client } from "../util/client";
-const Login = () => {
+const Login = ({ user }) => {
+  if (user) {
+    window.location.replace("/Home");
+  }
+
   const responseGoogle = (response) => {
     localStorage.setItem("user", JSON.stringify(response.credential));
     const { name, picture, sub } = jwt_decode(response.credential);
@@ -25,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
+    <GoogleOAuthProvider clientId="891686171315-ajpqvupfepo6m5tsadfpcrjk7duheedq.apps.googleusercontent.com">
       <div className="flex  justify-start items-center flex-col h-screen">
         <div className=" relative w-screen h-full">
           <video

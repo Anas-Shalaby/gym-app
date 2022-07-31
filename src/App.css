@@ -7,12 +7,29 @@ body {
   background-color: #000;
   color: #fff;
 }
-.slider {
-  /* width: 100px; */
-  height: 600px;
+.slider div {
+  height: 760px;
+  width: 700px;
+  margin-top: 30px;
+  background: #000;
 }
-.slider div img {
+.slider-about {
   width: 600px;
+  height: 500px;
+}
+.slider-about img {
+  height: fit-content;
+}
+
+.slider-services {
+  margin: 20px;
+}
+.slider-services div {
+  background: #000;
+}
+.slider-services img {
+  width: 400px;
+  height: 700px;
 }
 
 * {
@@ -84,6 +101,8 @@ body {
 .react-horizontal-scrolling-menu--wrapper {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 .logo {
@@ -106,8 +125,8 @@ body {
   position: absolute;
   right: 40px;
   top: 0px;
-  width: 550px;
-  height: 700px;
+  max-width: 550px;
+  max-height: 700px;
   margin-top: -330px;
 }
 
@@ -132,6 +151,8 @@ body {
   transition: 0.3s all ease-in-out;
   cursor: pointer;
   padding: 20px;
+  border-radius: 10px;
+  background-color: #000;
 }
 
 .exercise-card video {
@@ -149,15 +170,34 @@ body {
 .transfrom-card:hover {
   transform: scale(1.1, 1.1);
 }
-.transfrom-card:hover {
-  background-color: #ff2625;
-}
 
 .search-btn:hover {
   color: #ff2625 !important;
   border: 1px solid #ff2625 !important;
 }
-
+.about {
+  margin-top: 0;
+}
+.about div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 400px;
+  background: #000;
+}
+.offers {
+  margin-top: 0;
+}
+.offers div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 400px;
+}
+.offers video {
+  width: 600px;
+  height: 600px;
+}
 .exercise-video {
   display: flex;
   flex-direction: column;
@@ -172,10 +212,21 @@ body {
     width: 300px;
     height: 300px;
   }
+  .about {
+    display: flex;
+    flex-direction: column !important;
+  }
   .inputForm {
     width: 20%;
     padding: 10px 20px;
     border-radius: 12px;
+  }
+  .slider div {
+    max-width: 700px;
+  }
+  .slider-services img {
+    width: fit-content;
+    height: 500px;
   }
 
   .react-horizontal-scrolling-menu--scroll-container {
@@ -231,6 +282,28 @@ body {
   .slider {
     height: 564px;
   }
+  .slider-services img {
+    width: fit-content;
+    height: fit-content;
+  }
+  .slider div {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    display: none;
+  }
+  .slider-services img {
+    width: fit-content;
+    height: 300px;
+  }
+  .slider div {
+    width: 400px;
+    height: 480px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -241,15 +314,14 @@ body {
     width: 280px;
   }
   .transfrom-card {
-    padding: 10px;
+    padding: 0;
+    margin: auto;
   }
   .transfrom-card img {
-    padding: 10px;
+    padding: 0;
+    margin: auto;
   }
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
+
   .inputForm {
     width: 70%;
     padding: 10px 20px;
@@ -257,5 +329,20 @@ body {
   }
   .slider {
     height: 374px;
+  }
+
+  .slider-services {
+    width: fit-content;
+  }
+  .slider div {
+    max-width: 290px;
+    height: 380px;
+  }
+  .slider-services img {
+    width: fit-content;
+    height: 320px;
+  }
+  .about div {
+    width: 300px;
   }
 }
