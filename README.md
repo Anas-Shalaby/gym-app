@@ -1,1 +1,1 @@
-The web https://agiza.netlify.app/
+The web https://gym-app-rho.vercel.app/Home
