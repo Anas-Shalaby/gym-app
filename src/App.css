@@ -333,6 +333,7 @@ body {
 
   .slider-services {
     width: fit-content;
+    height: 317px;
   }
   .slider div {
     max-width: 290px;

@@ -145,7 +145,7 @@ const Services = () => {
         <Box
           sx={{
             width: { lg: "800px", md: "500px", sm: "300px" },
-            padding: "10px",
+
             borderRadius: "20px",
             display: "flex",
             alignItems: "center",
