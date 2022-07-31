@@ -158,7 +158,6 @@ const Services = () => {
             <video
               src={image10}
               autoPlay
-              muted
               controls
               controlsList="nodownload"
             ></video>
@@ -168,7 +167,7 @@ const Services = () => {
               sx={{
                 fontSize: { lg: "30px", md: "40px", sm: "40px" },
                 fontWeight: "bold",
-                opacity: "0.1",
+                opacity: "0.6",
                 display: { lg: "block" },
               }}
             >
@@ -178,7 +177,7 @@ const Services = () => {
               sx={{
                 fontSize: { lg: "30px", md: "35px", sm: "40px" },
                 fontWeight: "bold",
-                opacity: "0.1",
+                opacity: "0.6",
                 display: { lg: "block" },
               }}
             >
@@ -188,7 +187,7 @@ const Services = () => {
               sx={{
                 fontSize: { lg: "30px", md: "35px", sm: "40px" },
                 fontWeight: "bold",
-                opacity: "0.1",
+                opacity: "0.6",
                 display: { lg: "block" },
               }}
             >
