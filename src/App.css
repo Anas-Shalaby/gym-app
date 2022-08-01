@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Josefin Sans";
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #000;
   color: #fff;
 }
@@ -146,6 +146,56 @@ body {
   transition: 0.3s all ease-in-out;
 }
 
+.footer-container {
+  position: relative;
+}
+.footer-container > hr {
+  border: 1px solid #d9d9d9;
+}
+.footer {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+}
+.social-links {
+  display: flex;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+.blur {
+  background: #c92a2a;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -9;
+}
+.hero-blur {
+  width: 22rem;
+  height: 30rem;
+  left: 0;
+}
+.figures {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.figures > div {
+  display: flex;
+
+  flex-direction: column;
+}
+.figures > div > span:nth-child(1) {
+  color: white;
+  font-size: 3rem;
+}
+.figures > div > span:nth-child(2) {
+  color: #9c9c9c;
+  text-transform: uppercase;
+}
 .transfrom-card {
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
@@ -153,6 +203,13 @@ body {
   padding: 20px;
   border-radius: 10px;
   background-color: #000;
+}
+
+.stroke-text {
+  color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
 }
 
 .exercise-card video {

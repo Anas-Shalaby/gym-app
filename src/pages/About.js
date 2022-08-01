@@ -4,12 +4,14 @@ import { Box, Typography, Stack, Button } from "@mui/material";
 import trainer from "../assets/Trainer3.JPG";
 import trainer2 from "../assets/Trainer2.PNG";
 import trainer3 from "../assets/Trainer.JPG";
-import AwesomeSlider from "react-awesome-slider";
 import Footer from "../components/Footer";
+import AwesomeSlider from "react-awesome-slider";
+import "../testi.css";
 const About = () => {
   return (
     <div>
       <Navbar />
+
       <Typography
         color="#ff2625"
         sx={{

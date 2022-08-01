@@ -26,9 +26,7 @@ const Exercise = ({ exercises, setexercises, bodyPart }) => {
       );
 
       if (bodyPart === "all") {
-        exercisesData = exercise.map((exercise) => {
-          return exercise;
-        });
+        return;
       } else {
         exercisesData = exercise.filter((exercise) => {
           return exercise.target === bodyPart;

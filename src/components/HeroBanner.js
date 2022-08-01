@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import image from "../assets/Trainer.JPG";
 import "../App.css";
+import NumberCounter from "number-counter";
 
 const HeroBanner = () => {
   return (
@@ -13,6 +14,7 @@ const HeroBanner = () => {
       position="relative"
       p="20px"
     >
+      <div className="blur hero-blur"></div>
       <Typography fontWeight="600px" fontSize="26px" color="#e67700">
         Fitness Trainer
       </Typography>
@@ -35,6 +37,28 @@ const HeroBanner = () => {
       >
         Explore Exrecises
       </Button>
+      <div className="figures">
+        <div>
+          <span>
+            <NumberCounter end={14} start={0} delay="2" preFix="+" />{" "}
+          </span>
+          <span>expert coaches</span>
+        </div>
+        <div>
+          <span>
+            {" "}
+            <NumberCounter end={27} start={0} delay="3" preFix="+" />
+          </span>
+          <span>member joins</span>
+        </div>
+        <div>
+          <span>
+            {" "}
+            <NumberCounter end={50} start={0} delay="4" preFix="+" />
+          </span>
+          <span>fitness programs</span>
+        </div>
+      </div>
       <Typography
         fontWeight="600px"
         color="#ff2625"

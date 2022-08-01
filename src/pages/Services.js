@@ -1,135 +1,29 @@
-import React from "react";
-import { Box, Typography, Stack, Button } from "@mui/material";
-import image1 from "../assets/Transfromation1.jpeg";
-import image2 from "../assets/Transfromation2.jpeg";
-import image3 from "../assets/Transfromation3.jpeg";
-import image4 from "../assets/transform4.jpeg";
-import image5 from "../assets/transform5.jpeg";
-import image10 from "../assets/Video2.mp4";
-import image6 from "../assets/transform6.jpeg";
-import image7 from "../assets/transform7.jpeg";
-import image8 from "../assets/transform8.jpeg";
-import image9 from "../assets/transform9.jpeg";
+import React, { useState } from "react";
+import "../plans.css";
+import { Box, Typography } from "@mui/material";
+import testimonialsData from "../util/data2";
+import plansData from "../util/data.js";
+import rightArrow from "../assets/rightArrow.png";
+import leftArrow from "../assets/leftArrow.png";
 import "../App.css";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AwesomeSlider from "react-awesome-slider";
-import Offers from "../components/Offers";
+import Navbar from "../components/Navbar";
+import "../testi.css";
 // import "react-awesome-slider/dist/styles.css";
 const Services = () => {
+  const [selected, setSelected] = useState(0);
+  const tLength = testimonialsData.length;
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+
         justifyContent: "center",
       }}
     >
       <Navbar />
-      <Typography
-        color="#ff2625"
-        sx={{
-          marginTop: "20px",
-          fontSize: { lg: "80px", md: "70px", sm: "50px", xs: "30px" },
-          fontWeight: "bold",
-          opacity: "0.1",
-          display: { lg: "block" },
-        }}
-      >
-        Transformations
-      </Typography>
-      <AwesomeSlider
-        animation="cubeAnimation"
-        className="slider-services"
-        bullets={false}
-        selected="1"
-      >
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image1} alt="image1" />
-          </a>
-        </Box>
 
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/p/CdTNlTRKG9Z/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image2} alt="image2" />
-          </a>
-        </Box>
-
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image3} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image4} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image5} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image6} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image7} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image8} alt="image3" />
-          </a>
-        </Box>
-        <Box className="transfrom-card">
-          <a
-            href="https://www.instagram.com/mohamed__agiza/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={image9} alt="image3" />
-          </a>
-        </Box>
-      </AwesomeSlider>
-      <Offers />
       <Typography
         color="#ff2625"
         sx={{
@@ -141,74 +35,121 @@ const Services = () => {
       >
         Our Offers
       </Typography>
-      <Stack direction="row" sx={{ marginTop: "-40px" }}>
-        <Box
-          sx={{
-            width: { lg: "800px", md: "500px", sm: "300px" },
-            marginTop: "50px",
-            borderRadius: "20px",
-            display: "flex",
-            alignItems: "center",
-            gap: "100px",
-            flexDirection: { lg: "row", md: "row", xs: "column" },
-          }}
-          className="offers"
-        >
-          <div>
-            <video
-              src={image10}
-              autoPlay
-              controls
-              controlsList="nodownload"
-            ></video>
-          </div>
-          <div>
-            <Typography
-              sx={{
-                fontSize: { lg: "30px", md: "40px", sm: "40px" },
-                fontWeight: "bold",
-                opacity: "0.6",
-                display: { lg: "block" },
-              }}
-            >
-              1-Private Training
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { lg: "30px", md: "35px", sm: "40px" },
-                fontWeight: "bold",
-                opacity: "0.6",
-                display: { lg: "block" },
-              }}
-            >
-              2-Online Coaching
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { lg: "30px", md: "35px", sm: "40px" },
-                fontWeight: "bold",
-                opacity: "0.6",
-                display: { lg: "block" },
-              }}
-            >
-              3-Soon...
-            </Typography>
+      <div className="plans-container">
+        <div className="blur plans-blur-1"></div>
+        <div className="blur plans-blur-2"></div>
+        <div className="plans">
+          {plansData.map((data, index) => (
+            <div className="plan" key={index}>
+              {data.icon}
+              <Typography>{data?.name}</Typography>
+              <Typography> EGP {data?.price}</Typography>
+              <div className="features">
+                {data.features.map((feature, i) => (
+                  <div className="features" key={i}>
+                    <Typography sx={{ fontSize: "1.1rem" }}>
+                      {feature}
+                    </Typography>
+                  </div>
+                ))}
+              </div>
 
-            <Button
-              variant="contained"
-              color="warning"
-              href="https://www.instagram.com/mohamed__agiza/"
-              sx={{
-                backgroundColor: "warning",
-                padding: "10px",
-                fontWeight: "bold",
+              <button className="btn">
+                <a href="https://wa.me/message/2IFFOVEI6DVWP1">
+                  <Typography sx={{ fontWeight: "bold" }}>Join now</Typography>
+                </a>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Typography
+        color="#ff2625"
+        sx={{
+          marginTop: "20px",
+          fontSize: { lg: "80px", md: "70px", sm: "50px", xs: "30px" },
+          fontWeight: "bold",
+          opacity: "0.1",
+          display: { lg: "block" },
+        }}
+      >
+        Testimonials
+      </Typography>
+      <div className="Testi">
+        <div className="left">
+          <Typography
+            sx={{
+              fontSize: { lg: "20px", md: "25px", sm: "20px", xs: "20px" },
+              fontWeight: "bold",
+              marginBottom: "40px",
+              marginTop: "40px",
+
+              display: { lg: "block" },
+            }}
+          >
+            Testimonials
+          </Typography>
+          <Typography
+            className="stroke-text"
+            sx={{
+              fontSize: { lg: "30px", md: "25px", sm: "20px", xs: "20px" },
+              fontWeight: "bold",
+              marginBottom: "40px",
+
+              display: { lg: "block" },
+            }}
+          >
+            What they
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { lg: "40px", md: "25px", sm: "20px", xs: "20px" },
+              fontWeight: "bold",
+              marginBottom: "40px",
+
+              display: { lg: "block" },
+            }}
+          >
+            say about us
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { lg: "1.2rem", xs: "1rem" },
+            }}
+          >
+            {testimonialsData[selected]?.review}
+          </Typography>
+          <Typography>
+            <span>{testimonialsData[selected]?.name}</span>-{" "}
+            {testimonialsData[selected]?.status}
+          </Typography>
+        </div>
+        <div className="right">
+          <div></div>
+          <div></div>
+          <img src={testimonialsData[selected].image} alt="" />
+          <div className="arrows">
+            <img
+              onClick={() => {
+                selected === 0
+                  ? setSelected(tLength - 1)
+                  : setSelected((prev) => prev - 1);
               }}
-            >
-              Contact us
-            </Button>
+              src={leftArrow}
+              alt=""
+            />
+            <img
+              onClick={() => {
+                selected === tLength - 1
+                  ? setSelected(0)
+                  : setSelected((prev) => prev + 1);
+              }}
+              src={rightArrow}
+              alt=""
+            />
           </div>
-        </Box>
-      </Stack>
+        </div>
+      </div>
       <Footer />
     </Box>
   );

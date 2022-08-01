@@ -1,58 +1,33 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import Logo from "../assets/Logo.png";
 import "../App.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box mt="10px" sx={{ zIndex: "1000" }}>
-      <Stack
-        alignItems="center"
-        px="40px"
-        pt="14px"
-        direction="row"
-        justifyContent="center"
-        sx={{
-          width: { lg: "100%", md: "100%", sm: "90%", xs: "100%" },
-          gap: { md: "30px", xs: "20px" },
-        }}
-      >
-        <Link
-          to={"/Home"}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <img src={Logo} alt="logo" width="100px" height="100px" />
-        </Link>
-        <Typography sx={{ display: { xs: "none", md: "block" } }}>
-          Contact With Me
-        </Typography>
-        <a
-          href="https://www.facebook.com/MohamedAgiza20"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FacebookIcon
-            sx={{
-              color: "#ff2625",
-            }}
-          />
-        </a>
-        <a
-          href="https://www.instagram.com/mohamed__agiza/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <InstagramIcon sx={{ color: "#ff2625" }} />
-        </a>
-        <Typography href="" rel="noreferrer" target="_blank">
-          +201021285657
-        </Typography>
-      </Stack>
-    </Box>
+    <div className="footer-container">
+      <hr />
+      <div className="footer">
+        <div className="social-links">
+          <a href="https://www.facebook.com/MohamedAgiza20">
+            <FacebookIcon sx={{ fontSize: 50, color: "#343a40" }} />
+          </a>
+          <a href="https://www.instagram.com/mohamed__agiza/">
+            <InstagramIcon sx={{ fontSize: 50, color: "#343a40" }} />
+          </a>
+          <a href="https://twitter.com/MohamedAgiza7">
+            <TwitterIcon sx={{ fontSize: 50, color: "#343a40" }} />
+          </a>
+        </div>
+        <div className="logo">
+          <img src={Logo} alt="logo" />
+        </div>
+      </div>
+    </div>
   );
 };
 
