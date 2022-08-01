@@ -6,7 +6,6 @@ import HeroBanner from "../components/HeroBanner";
 import Search from "../components/Search";
 import Exercise from "../components/Exercise";
 
-import Offers from "../components/Offers";
 import "../App.css";
 
 const Home = ({ user, userInfor }) => {
