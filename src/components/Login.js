@@ -7,10 +7,6 @@ import { client } from "../util/client";
 
 // import { client } from "../util/client";
 const Login = ({ user }) => {
-  if (user) {
-    window.location.replace("/Home");
-  }
-
   const responseGoogle = (response) => {
     localStorage.setItem("user", JSON.stringify(response.credential));
     const { name, picture, sub } = jwt_decode(response.credential);
