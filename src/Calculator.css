@@ -1,0 +1,156 @@
+input {
+  border: none;
+  width: 100%;
+  padding: 0.6rem 2rem;
+  outline: none;
+  border-radius: 1px;
+  background-color: #000;
+  border-bottom: 1px solid gray;
+  color: white;
+  font-size: 1.3rem;
+}
+.form {
+  display: flex;
+  max-width: 80%;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+.btn {
+  width: fit-content;
+}
+.gender {
+  width: 30%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  color: gray;
+  width: 13%;
+  margin: 0 1rem 0;
+}
+.age {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.height {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.result::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  border-radius: 12px;
+  height: 100%;
+  background-color: #dd2625;
+  left: 3.6rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 39px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: -0.2rem;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+@media screen and (max-width: 400px) {
+  .form {
+    margin-top: 5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  .gender {
+    gap: 1rem;
+  }
+  input {
+    font-size: 1rem;
+  }
+
+  .age span {
+    width: 70% !important;
+  }
+  .checkmark {
+    width: 16px;
+    height: 16px;
+  }
+}

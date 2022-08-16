@@ -9,9 +9,7 @@ const Navbar = ({ user }) => {
   let userdecoded = user;
   try {
     userdecoded = jwtDecode(user);
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
   return (
     <Stack
       direction="row"
@@ -76,6 +74,18 @@ const Navbar = ({ user }) => {
             }}
           >
             About
+          </Typography>
+        </Link>
+        <Link
+          to={"/Calculator"}
+          style={{ textDecoration: "none", color: "#e67700" }}
+        >
+          <Typography
+            sx={{
+              fontSize: { lg: "20px", md: "18px", xs: "15px" },
+            }}
+          >
+            Calculator
           </Typography>
         </Link>
 

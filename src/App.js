@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import Calculator from "./pages/Calculator";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -54,6 +55,7 @@ const App = () => {
           />
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Calculator" element={<Calculator />} />
         </Routes>
       </Box>
     </BrowserRouter>
