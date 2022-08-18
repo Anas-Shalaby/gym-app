@@ -25,7 +25,7 @@ const Login = ({ user }) => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="891686171315-ajpqvupfepo6m5tsadfpcrjk7duheedq.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}>
       <div className="flex  justify-start items-center flex-col h-screen">
         <div className=" relative w-screen h-full">
           <video
