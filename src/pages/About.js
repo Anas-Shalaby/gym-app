@@ -17,7 +17,7 @@ const About = () => {
         sx={{
           fontSize: { lg: "80px", md: "70px", sm: "50px", xs: "30px" },
           fontWeight: "bold",
-          marginBottom: "40px",
+          marginBottom: "5rem",
           marginTop: "40px",
           opacity: "0.1",
           display: { lg: "block" },
@@ -42,28 +42,21 @@ const About = () => {
             borderRadius: "20px",
             display: "flex",
             alignItems: "center",
+            marginBottom: "5rem",
             justifyContent: "center",
             gap: "50px",
             flexDirection: { lg: "row", md: "row", xs: "column" },
           }}
           className="about"
         >
-          <AwesomeSlider
-            animation="cubeAnimation"
-            className="slider-about"
-            bullets={false}
-            selected="1"
-          >
-            <div>
-              <img src={trainer} alt="trainer" />
-            </div>
-            <div>
-              <img src={trainer2} alt="trainer" />
-            </div>
-            <div>
-              <img src={trainer3} alt="trainer" />
-            </div>
-          </AwesomeSlider>
+          <div>
+            <img
+              src={trainer}
+              alt="trainer"
+              style={{ borderRadius: "20px", boxShadow: "0 0 15px #fff" }}
+            />
+          </div>
+
           <div>
             <Typography
               sx={{
